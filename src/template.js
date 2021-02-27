@@ -1,38 +1,27 @@
+import {row, col} from "./utils";
 
-export function title(block) {
-    return `
-          <div class="row">
-            <div class="col-sm">
-                <h1>${block.value}</h1>
-            </div>
-         </div>
-        `
+function title(block) {
+   return row(col(` <h1>${block.value}</h1>`))
 }
 
-export function text(block) {
-    return `
-          <div class="row">
-            <div class="col-sm">
-                <p>${block.value}</p>
-            </div>
-         </div>
-        `
+function text(block) {
+    return row(col(` <p>${block.value}</p>`))
 }
 
-export function columns(block) {
-    const html = block.value.map(item => `<div class="col-sm"> ${item}</div>`);
-    return `
-            <div class="row">
-                ${html}
-            </div>
-          `
+function column(block) {
+    const html = block.value.map(item => col(item));
+    return row(html.join(''));
 }
 
+function image(block) {
+    return row( `<img src="${block.value}"/>`)
 
-export function image(block) {
-    console.log('s')
-    return `
-    <div class="row">
-        <img src="${block.value}"/>
-    </div>`
 }
+
+export const templates = {
+    title,
+    text,
+    image,
+    column
+}
+
