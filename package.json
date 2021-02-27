@@ -1,0 +1,16 @@
+{
+  "name": "javascript-constructor",
+  "version": "1.0.0",
+  "description": "javaScript pure constructor",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "constructor",
+    "combine",
+    "web"
+  ],
+  "author": "Sabyrzhan <azhg.sabyrzhan@gmail.com>",
+  "license": "ISC"
+}
